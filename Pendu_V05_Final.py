@@ -168,7 +168,7 @@ bouton_proposer.pack(pady=10)  # Bouton principal qui déclenche la vérificatio
 def nouvelle_partie():
     # Réinitialise le jeu avec un nouveau mot, ajuste la difficulté et réinitialise les compteurs.
     global mot, mot_affiche, tentatives, lettres_donnees, nb_parties, difficultee, nb_victoires
-    if nb_victoires >= 1:  # Si le joueur a gagné au moins une fois
+    if nb_victoires >= 10:  # Si le joueur a gagné au moins une fois
         bouton_Nouvelle.config(state="disabled")  # On désactive le bouton de nouvelle partie
         fenetre_victoire()  # On affiche la fenêtre d’animation de victoire
     if nb_parties <= 10:                    # On limite à 10 parties avant de stabiliser la difficulté
@@ -276,4 +276,5 @@ bouton_Nouvelle = tk.Button(fenetre, text="Nouvelle partie", command=nouvelle_pa
 bouton_Nouvelle.pack(pady=10)  # Bouton pour relancer une partie après victoire ou défaite
 
 # --- LANCEMENT DU PROGRAMME ---
+
 fenetre.mainloop()  # Démarre la boucle principale Tkinter (interface interactive)
